@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Baking Time</string>
+
+    <string name="error_message">Ooops… Something went wrong!\nCheck your connection and try again!</string>
+    <string name="reload_button_description">Reload Button</string>
+
+    <string name="servings_ingredients_format">%1$s / %2$s</string>
+    <plurals name="servings_text">
+        <item quantity="one">%d serving</item>
+        <item quantity="other">%d servings</item>
+    </plurals>
+    <plurals name="ingredients_text">
+        <item quantity="one">%d ingredient</item>
+        <item quantity="other">%d ingredients</item>
+    </plurals>
+
+    <string name="ingredients_title">Ingredients</string>
+    <string name="steps_title_format">Step %1$d</string>
+
+    <string name="ingredient_list_item_format">\u2022 %1$s [%2$.1f %3$s]</string>
+    <string name="previous">previous</string>
+    <string name="next">next</string>
+    <string name="view_step_details">Click on a step to see its details here.</string>
+
+
+    <string name="cd_step_video">Step video</string>
+    <string name="cd_step_thumb">Step thumbnail</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_icon_size">48dp</dimen>
+    <dimen name="vertical_spacing">4dp</dimen>
+    <dimen name="external_padding">8dp</dimen>
+    <dimen name="title_size">20sp</dimen>
+    <dimen name="card_spacing">8dp</dimen>
+</resources>
