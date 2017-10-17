@@ -2,12 +2,12 @@ package com.thomashorta.bakingtime;
 
 import android.content.Intent;
 import android.media.AudioManager;
-import android.support.v4.app.Fragment;
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.thomashorta.bakingtime.adapter.RecipeDetailAdapter;
 import com.thomashorta.bakingtime.model.Recipe;
@@ -100,6 +100,7 @@ public class RecipeDetailActivity extends AppCompatActivity
     public void onStepClick(int stepPosition) {
         if (mTwoPane) {
             showStep(stepPosition, R.id.step_detail_container, false, ANIM_NONE);
+            findViewById(R.id.tv_show_details).setVisibility(View.GONE);
         } else {
             showStep(stepPosition, R.id.recipe_detail_container, true, ANIM_FIRST);
         }
