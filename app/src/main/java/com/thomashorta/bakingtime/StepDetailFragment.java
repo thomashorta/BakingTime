@@ -173,10 +173,21 @@ public class StepDetailFragment extends Fragment {
         return rootView;
     }
 
+    private boolean mWasPlayingOnPause = false;
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (mExoPlayer != null) {
+            mWasPlayingOnPause = mExoPlayer.getPlayWhenReady();
+            mExoPlayer.setPlayWhenReady(false);
+        }
+    }
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         if (mExoPlayer != null) {
-            outState.putBoolean(EXTRA_PLAY_WHEN_READY, mExoPlayer.getPlayWhenReady());
+            outState.putBoolean(EXTRA_PLAY_WHEN_READY, mWasPlayingOnPause);
             outState.putLong(EXTRA_VIDEO_POSITION, mExoPlayer.getCurrentPosition());
         }
         super.onSaveInstanceState(outState);
