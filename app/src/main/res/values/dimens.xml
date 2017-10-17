@@ -5,4 +5,5 @@
     <dimen name="external_padding">8dp</dimen>
     <dimen name="title_size">20sp</dimen>
     <dimen name="card_spacing">8dp</dimen>
+    <dimen name="content_height">200dp</dimen>
 </resources>

@@ -12,6 +12,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Step implements Parcelable
 {
+    private static final String VIDEO_EXT = ".mp4";
 
     @SerializedName("id")
     @Expose
@@ -81,7 +82,13 @@ public class Step implements Parcelable
     }
 
     public String getVideoURL() {
-        return videoURL;
+        if (!isEmpty(videoURL) && videoURL.toLowerCase().endsWith(VIDEO_EXT)) {
+            return videoURL;
+        } else if (!isEmpty(thumbnailURL) && thumbnailURL.toLowerCase().endsWith(VIDEO_EXT)) {
+            return thumbnailURL;
+        } else {
+            return null;
+        }
     }
 
     public void setVideoURL(String videoURL) {
@@ -89,7 +96,13 @@ public class Step implements Parcelable
     }
 
     public String getThumbnailURL() {
-        return thumbnailURL;
+        if (!isEmpty(thumbnailURL) && !thumbnailURL.toLowerCase().endsWith(VIDEO_EXT)) {
+            return thumbnailURL;
+        } else if (!isEmpty(videoURL) && !videoURL.toLowerCase().endsWith(VIDEO_EXT)) {
+            return videoURL;
+        } else {
+            return null;
+        }
     }
 
     public void setThumbnailURL(String thumbnailURL) {
@@ -108,4 +121,7 @@ public class Step implements Parcelable
         return 0;
     }
 
+    private boolean isEmpty(String string) {
+        return string == null || string.length() == 0;
+    }
 }

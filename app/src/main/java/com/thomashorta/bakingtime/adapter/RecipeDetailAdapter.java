@@ -81,7 +81,7 @@ public class RecipeDetailAdapter
     }
 
     public interface OnStepClickListener {
-        void onStepClick(Step step, int totalSteps);
+        void onStepClick(int stepPosition);
     }
 
     public class DetailItemViewHolder extends RecyclerView.ViewHolder
@@ -110,8 +110,7 @@ public class RecipeDetailAdapter
             if (getAdapterPosition() == 0) return;
 
             if (mStepClickListener != null) {
-                Step step = mRecipe.getSteps().get(getAdapterPosition() - 1);
-                mStepClickListener.onStepClick(step, mRecipe.getSteps().size());
+                mStepClickListener.onStepClick(getAdapterPosition() - 1);
             }
         }
     }

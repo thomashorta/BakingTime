@@ -5,7 +5,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/iv_step_thumb"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/content_height"
+        android:layout_marginBottom="@dimen/vertical_spacing"
+        android:contentDescription="@string/cd_step_thumb"
+        android:visibility="gone"/>
+
+    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+        android:id="@+id/ep_step_video"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/content_height"
+        android:layout_marginBottom="@dimen/vertical_spacing"
+        android:contentDescription="@string/cd_step_video"
+        android:visibility="gone"/>
+
     <ScrollView
+        android:id="@+id/sv_details"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -15,22 +32,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/iv_step_thumb"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginBottom="@dimen/vertical_spacing"
-                android:contentDescription="@string/cd_step_thumb"
-                android:visibility="gone"/>
-
-            <com.google.android.exoplayer2.ui.SimpleExoPlayerView
-                android:id="@+id/ep_step_video"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginBottom="@dimen/vertical_spacing"
-                android:contentDescription="@string/cd_step_video"
-                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/tv_step_detail_title"
