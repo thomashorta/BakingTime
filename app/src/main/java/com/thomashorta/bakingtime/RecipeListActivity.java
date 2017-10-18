@@ -21,6 +21,7 @@ import android.widget.ProgressBar;
 import com.thomashorta.bakingtime.adapter.RecipeListAdapter;
 import com.thomashorta.bakingtime.loader.RecipeListLoader;
 import com.thomashorta.bakingtime.model.Recipe;
+import com.thomashorta.bakingtime.widget.RandomRecipeService;
 
 import java.util.ArrayList;
 
@@ -109,6 +110,7 @@ public class RecipeListActivity extends AppCompatActivity
     @Override
     public void onLoadFinished(Loader<ArrayList<Recipe>> loader, ArrayList<Recipe> data) {
         if (data != null && data.size() > 0) {
+            RandomRecipeService.startGetRandomRecipe(this, data);
             mRecipeListAdapter.setRecipeList(data);
             showRecipeList();
         } else {

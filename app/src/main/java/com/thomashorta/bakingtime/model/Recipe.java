@@ -4,11 +4,14 @@
 
 package com.thomashorta.bakingtime.model;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.Gson;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.thomashorta.bakingtime.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +84,32 @@ public class Recipe implements Parcelable
         this.name = name;
     }
 
+    public String getSimpleIngredientsString(Context context) {
+        if (ingredients == null || ingredients.size() == 0) return "";
+
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < ingredients.size(); i++) {
+            if (i > 0) builder.append("\n");
+            Ingredient ingredient = ingredients.get(i);
+            builder.append(String.format(context.getString(R.string.ingredient_list_simple_format),
+                    ingredient.getIngredient()));
+        }
+        return builder.toString();
+    }
+
+    public String getIngredientsString(Context context) {
+        if (ingredients == null || ingredients.size() == 0) return "";
+
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < ingredients.size(); i++) {
+            if (i > 0) builder.append("\n");
+            Ingredient ingredient = ingredients.get(i);
+            builder.append(String.format(context.getString(R.string.ingredient_list_item_format),
+                    ingredient.getIngredient(), ingredient.getQuantity(), ingredient.getMeasure()));
+        }
+        return builder.toString();
+    }
+
     public List<Ingredient> getIngredients() {
         return ingredients;
     }
@@ -126,4 +155,9 @@ public class Recipe implements Parcelable
         return 0;
     }
 
+    @Override
+    public String toString() {
+        Gson gson = new Gson();
+        return gson.toJson(this);
+    }
 }

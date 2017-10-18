@@ -45,16 +45,7 @@ public class RecipeDetailAdapter
         if (position == 0) {
             // ingredient
             title = mContext.get().getString(R.string.ingredients_title);
-            StringBuilder builder = new StringBuilder();
-            List<Ingredient> ingredientList = mRecipe.getIngredients();
-            for (int i = 0; i < ingredientList.size(); i++) {
-                if (i > 0) builder.append("\n");
-                Ingredient ingredient = ingredientList.get(i);
-                builder.append(String.format(mContext.get().getString(
-                        R.string.ingredient_list_item_format), ingredient.getIngredient(),
-                        ingredient.getQuantity(), ingredient.getMeasure()));
-            }
-            desc = builder.toString();
+            desc = mRecipe.getIngredientsString(mContext.get());
         } else {
             int idx = position - 1;
             Step step = mRecipe.getSteps().get(idx);

@@ -4,6 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="widget_bg">#CC303F9F</color>
+    <color name="exobutton_bg">#CC000000</color>
+    <color name="stroke">#B1BCBE</color>
+
     <color name="lighter_gray">#ddd</color>
     <color name="darker_gray">#aaa</color>
     <color name="white">#fff</color>

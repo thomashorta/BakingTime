@@ -18,6 +18,7 @@
     <string name="steps_title_format">Step %1$d</string>
 
     <string name="ingredient_list_item_format">\u2022 %1$s [%2$.1f %3$s]</string>
+    <string name="ingredient_list_simple_format">\u2022 %1$s</string>
     <string name="previous">previous</string>
     <string name="next">next</string>
     <string name="view_step_details">Click on a step to see its details here.</string>
@@ -25,4 +26,6 @@
 
     <string name="cd_step_video">Step video</string>
     <string name="cd_step_thumb">Step thumbnail</string>
+    <string name="widget_open_app">Open Baking Time to get random recipes here!</string>
+    <string name="random_recipe">#RandomRecipe</string>
 </resources>

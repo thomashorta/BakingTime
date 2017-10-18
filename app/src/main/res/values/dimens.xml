@@ -6,4 +6,5 @@
     <dimen name="title_size">20sp</dimen>
     <dimen name="card_spacing">8dp</dimen>
     <dimen name="content_height">200dp</dimen>
+    <dimen name="widget_padding">16dp</dimen>
 </resources>

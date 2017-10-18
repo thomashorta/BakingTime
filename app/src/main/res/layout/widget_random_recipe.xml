@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_bg">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:padding="@dimen/widget_padding"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:alpha="0.8"
+        android:textStyle="italic"
+        android:text="@string/random_recipe"/>
+
+    <TextView
+        android:id="@+id/widget_open_app_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/widget_padding"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="@string/widget_open_app"
+        android:visibility="visible"/>
+
+    <LinearLayout
+        android:id="@+id/widget_content"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/widget_padding"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/widget_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:alpha="0.9"
+            android:textStyle="bold|italic"
+            tools:text="Yellow Cake"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="16dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:alpha="0.9"
+            android:text="@string/ingredients_title"/>
+
+        <TextView
+            android:id="@+id/widget_ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:textColor="@color/white"
+            android:lineSpacingMultiplier="1.3"
+            android:alpha="0.9"
+            android:layout_marginTop="@dimen/vertical_spacing"
+            tools:text="\u2022 Whipped Cream [1 CUP]\n\u2022 Crushed cookies [1 TBLSP]"/>
+
+    </LinearLayout>
+</FrameLayout>
